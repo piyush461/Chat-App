@@ -4,7 +4,6 @@ import Home from './components/Home';
 import ChatRoom from './components/ChatRoom';
 import ChatInput from './components/ChatInput';
 import ChatRoomHeader from './components/ChatRoomHeader';
-import { SocketMessageTypes } from 'teleparty-websocket-lib';
 
 function App() {
   const [client, setClient] = useState(null);
@@ -20,10 +19,8 @@ function App() {
     if (!client) return;
 
     client._socketEventHandler.onMessage = (msg) => {
-      console.log(msg);
 
       if (msg.type === "sendMessage") {
-        console.log("📩 Incoming:", msg.data);
         setMessages((prev) => [...prev, msg.data]);
       }
 
