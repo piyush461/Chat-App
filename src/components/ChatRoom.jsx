@@ -22,7 +22,7 @@ function ChatRoom({ messages, typingUser }) {
   return (
     <div
       ref={chatRef}
-      className="h-[350px] relative max-md:h-[60vh] w-full md:min-w-xl overflow-y-auto flex flex-col border border-gray-300 rounded p-4 shadow-sm"
+      className="h-[350px] max-md:h-[60vh] w-full md:min-w-xl overflow-y-auto flex flex-col border border-gray-300 rounded p-4 shadow-sm"
     >
       {messages.length === 0 ? (
         <p className="text-center text-gray-500">No messages yet</p>
@@ -66,7 +66,7 @@ function ChatRoom({ messages, typingUser }) {
       )}
       {typingUser && (
         <div className="text-xs font-semibold italic text-gray-700">
-          <span className='absolute bottom-2 left-2'>Someone is typing ..<span className='animate-bounce absolute'>.</span></span>
+          <span>Someone is typing ..<span className='animate-bounce absolute'>.</span></span>
         </div>
       )}
     </div>
